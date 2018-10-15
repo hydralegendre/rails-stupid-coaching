@@ -1,0 +1,20 @@
+<h1>Stupid Coaching</h1>
+<div class=bordure>
+  <p><%= params[:question] %></p>
+  <p><em>-You</em></p>
+</div>
+  <% if params[:question].include?('?') %>
+    <% params[:answer] = 'Silly question, get dressed and go to work!' %>
+  <% elsif params[:question].include?('I am going to work') %>
+     <% params[:answer] = 'Great!' %>
+   <% else %>
+   <% params[:answer] = "I don't care, get dressed and go to work!" %>
+  <% end %>
+<div class=bordure id="select">
+  <p><strong><%= params[:answer] %></strong></p>
+  <p><em>-Your coach</em></p>
+</div>
+
+<%= link_to "ask a new question", ask_path, :class => "lien"%>
+
+
